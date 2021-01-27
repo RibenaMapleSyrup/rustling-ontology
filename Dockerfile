@@ -31,10 +31,14 @@ linker = "/opt/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-g
 '>> /build/.cargo/config
 
 
-RUN echo 'export TARGET_CC=/opt/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc' >> /build/.bashrc
+RUN echo 'export TARGET_CC=/opt/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabih$
 
 RUN ln -s /pypirc /build/.pypirc
 RUN ln -s /dinghy.toml /build/.dinghy.toml
 RUN ln -s /ssh-conf /build/.ssh
 
-WORKDIR /build/workdir
+RUN git clone https://github.com/snipsco/rustling-ontology.git
+WORKDIR /build/rustling-ontology
+RUN /build/.cargo/bin/cargo build
+WORKDIR /build/rustling-ontology/cli
+RUN /build/.cargo/bin/cargo run -- --lang en parse "tomorrow morning"
