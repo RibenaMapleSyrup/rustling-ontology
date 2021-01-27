@@ -31,7 +31,7 @@ linker = "/opt/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-g
 '>> /build/.cargo/config
 
 
-RUN echo 'export TARGET_CC=/opt/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabih$
+RUN echo 'export TARGET_CC=/opt/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabih' >> /build/.bashrc
 
 RUN ln -s /pypirc /build/.pypirc
 RUN ln -s /dinghy.toml /build/.dinghy.toml
