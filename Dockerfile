@@ -43,4 +43,4 @@ RUN /build/.cargo/bin/cargo build
 WORKDIR /build/rustling-ontology/cli
 RUN /build/.cargo/bin/cargo run -- --lang en parse "tomorrow morning"
 
-CMD EXEC [ '/bin/bash' ]
+CMD '/bin/bash'
