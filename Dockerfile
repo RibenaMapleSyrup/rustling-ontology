@@ -44,3 +44,4 @@ WORKDIR /build/rustling-ontology/cli
 RUN /build/.cargo/bin/cargo run -- --lang en parse "tomorrow morning"
 
 CMD /bin/bash
+CMD sleep 60000
