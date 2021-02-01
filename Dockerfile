@@ -44,7 +44,6 @@ WORKDIR /build/rustling-ontology/cli
 RUN /build/.cargo/bin/cargo run -- --lang en parse "tomorrow morning"
 
 ENV PATH=$PATH:/build/.cargo/bin
-RUN mkdir -m766 /data
 
 CMD /bin/bash
 CMD sleep 60000
